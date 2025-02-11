@@ -7,8 +7,12 @@ public class AuthController : ControllerBase
 	{
 		_authService = authService;
 	}
-
-	[HttpPost]
+	
+														/*public record LogiinRequest
+														(
+															string email,
+															string password
+    [HttpPost]													);*/
     public async Task<IActionResult> LoginAsync(LogiinRequest request,CancellationToken cancellationToken)
     {
         var authResult=await _authService.GetTakenAsync(request.email, request.password, cancellationToken);

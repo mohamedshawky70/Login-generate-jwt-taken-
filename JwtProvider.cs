@@ -14,13 +14,14 @@ public class JwtProvider : IJwtProvider
 		};
 		//Generate Key to encyrept and decrypt taken
 		var SymmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("OvQWhp2kSk9D1RG8rrHI1qLeiKmBxRaz"));
+		//المسئول عن تشفير الايميل واللباس فبديله المفتاح اللي هيشفر بيه والاجورزم نوع التشفير
 		var signingCredentials = new SigningCredentials(SymmetricSecurityKey, SecurityAlgorithms.HmacSha256);
 
 		var expiresIn = 1800;
 		var taken = new JwtSecurityToken(
 			issuer: "SurveyBasketApp",//مين اللي عمل التوكن
 			audience: "SurveyBasketUsers",// لمين التوكن دي
-			claims: claims,
+			claims: claims, //معلومات خاصه باليوزر صاحب هذه التوكن
 			expires: DateTime.UtcNow.AddMinutes(expiresIn),
 			signingCredentials:signingCredentials
 		);

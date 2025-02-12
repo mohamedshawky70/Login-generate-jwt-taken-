@@ -1,1 +1,2 @@
-Use option pattern (section and class) to set taken's settings in file JwtProvider and DependencyInjection
+1)Intall ..JwtBeare package
+2)Use option pattern (section and class) to set taken's settings in file JwtProvider and DependencyInjection
